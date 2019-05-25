@@ -1,0 +1,497 @@
+html {
+    margin: 0;
+    padding: 0;
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #eee;
+        header {
+            display: flex;
+            width: 100%;;
+            height: 60px;
+            background-color: #274a78;
+            font-size: 30px;
+            justify-content: space-between;
+            h1 {
+                margin: 0 5%;
+                font-size: 24px;
+                line-height: 60px;
+                color: white;
+            }
+            .sns_icon {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                margin: 10px 5%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+            section {
+                margin: 30px 0;
+            }
+            .window {
+                width: 1200px;
+                border-radius: 15px;
+                overflow: hidden;
+                margin: 30px auto;
+                box-shadow: 0 0px 10px #606060; 
+                .tabs {
+                    width: 100%;
+                    height: 50px;
+                    display: flex;
+                    background-color: #292929;
+                    .circles {
+                        width: 120px;
+                        height: 100%;
+                        padding: 0 15px;
+                        display: flex;
+                        box-sizing: border-box;
+                        .circle {
+                            width: 20px;
+                            height: 20px;
+                            margin: 15px 5px;
+                            border-radius: 50%;
+                        }
+                        .circle_red {
+                            background-color: #ee827c;
+                        }
+                        .circle_yellow {
+                            background-color: #f5e56b;
+                        }
+                        .circle_green {
+                            background-color: #68be8d;
+                        }
+                    }
+                    .tab {
+                        width: 20%;
+                        height: 40px;
+                        margin-top: 20px;
+                        color: #c0c0c0;
+                        font-size: 14px;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        cursor: pointer;
+                        &:hover {
+                            margin-top: 10px;
+                            background-color: #333;
+                            .tab_main {
+                                height: 30px;
+                                border: none;
+                                line-height: 40px;
+                            }
+                        }
+                        .tab_main {
+                            width: 100%;
+                            height: 20px;
+                            margin: 0 0 10px;
+                            padding: 0 5%;
+                            border-right: 1px solid #404040;
+                            line-height: 20px;
+                            box-sizing: border-box;
+                            span {
+
+                            }
+                        }
+                    }
+                    .tab_now {
+                        margin-top: 10px;
+                        background-color: #404040;
+                        color: white;
+                        .tab_main {
+                            height: 30px;
+                            border: none;
+                            line-height: 40px;
+                        }
+                        &:hover {
+                            background-color: #404040;
+                        }
+                    }
+                    
+                }
+                .search {
+                    width: 100%;
+                    height: 60px;
+                    padding-top: 10px;
+                    box-sizing: border-box;
+                    background-color: #404040;
+                    .search_bar {
+                        width: 90%;
+                        height: 40px;
+                        margin: 0 auto;
+                        border-radius: 20px;
+                        background-color: #333;
+                        line-height: 40px;
+                        padding-left: 3%;
+                        box-sizing: border-box;
+                        a {
+                            color: white;
+                            text-decoration: none;
+                            font-size: 14px;
+                            &:visited {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .contents {
+                    width: 100%;
+                    height: 600px;
+                    background-color: white;
+                    overflow: scroll;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .skills {
+                width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                .skill {
+                    width: 250px;
+                    background-color: white;
+                    padding-top: 10px;
+                    box-sizing: border-box;
+                    border-radius: 15px;
+                    p {
+                        text-align: center;
+                        font-weight: bold;
+                        color: #c0c0c0;
+                    }
+                    .skill_name {
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 20px;
+                        border-top: 1px dashed #eee;
+                        line-height: 50px;
+                    }
+                    @mixin circle($background: #333){
+                        position: relative;
+                        width: 120px;
+                        height: 120px;
+                        background: $background;
+                        border-radius: 50%;
+                        text-align: center;
+                        overflow: hidden;
+                        margin: 30px auto 0;
+                        z-index: 1;
+                        box-shadow: 0 0 5px #a0a0a0;
+                        &::before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: -60px;
+                            width: 120px;
+                            height: 120px;
+                            background: #eee;
+                            transform-origin: right 60px;
+                            z-index: 2;
+                        }
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 0px;
+                            left: 60px;
+                            width: 120px;
+                            height: 120px;
+                            background: #eee;
+                            transform-origin: left 60px;
+                            z-index: 3;
+                        }
+                        .circle-inner {
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                            width: 80px;
+                            height: 80px;
+                            line-height: 80px;
+                            background: white;
+                            border-radius: 50%;
+                            z-index: 4;
+                            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                            img {
+                                width: 40px;
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                    .circle1 {
+                        @include circle(#ffbf7f);
+                        &::before {
+                            animation: rotate-circle1-left 1.5s linear forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle1-right 1.5s linear forwards;
+                        }
+                        @keyframes rotate-circle1-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #ffbf7f;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #ffbf7f;
+                            }
+                        }
+                        @keyframes rotate-circle1-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(162deg); }
+                        }
+                    }
+                    .circle2 {
+                        @include circle(#7fbfff);
+                        &::before {
+                            animation: rotate-circle2-left 1.5s linear forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle2-right 1.5s linear forwards;
+                        }
+                        @keyframes rotate-circle2-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #7fbfff;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #7fbfff;
+                            }
+                        }
+                        @keyframes rotate-circle2-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(144deg); }
+                        }
+                    }
+                    .circle3 {
+                        @include circle(#ffff7f);
+                        &::before {
+                            animation: rotate-circle3-left 1.5s linear forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle3-right 1.5s linear forwards;
+                        }
+                        @keyframes rotate-circle3-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #ffff7f;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #ffff7f;
+                            }
+                        }
+                        @keyframes rotate-circle3-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(108deg); }
+                        }
+                    }
+                    .circle4 {
+                        @include circle(#ed7b7b);
+                        &::after {
+                            animation: rotate-circle4-right 1.5s linear forwards;
+                        }
+                        @keyframes rotate-circle4-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            
+                            100% {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+// @mixin graph($background: #333, $percentage: 180deg) {
+//     $time: 2000ms;
+//     position: relative;
+//     width: 120px;
+//     height: 120px;
+//     background: $background;
+//     border-radius: 50%;
+//     text-align: center;
+//     overflow: hidden;
+//     z-index: 1;
+
+//     @if $percentage <= 180 {
+//         &::before {
+//             content: "";
+//             display: block;
+//             position: absolute;
+//             top: 0;
+//             left: -60px;
+//             width: 120px;
+//             height: 120px;
+//             background: #f8f8f8;
+//             transform-origin: right 60px;
+//             z-index: 2;
+//             // animation: rotate-circle-left 2s linear forwards;
+//         }
+//         &::after {
+//             content: "";
+//             display: block;
+//             position: absolute;
+//             top: 0px;
+//             left: 60px;
+//             width: 120px;
+//             height: 120px;
+//             background: #f8f8f8;
+//             transform-origin: left 60px;
+//             z-index: 3;
+//             animation: rotate-circle-right $time linear forwards;
+//         }
+//         .circle-inner {
+//             position: absolute;
+//             top: 20px;
+//             left: 20px;
+//             width: 80px;
+//             height: 80px;
+//             line-height: 80px;
+//             background: #fff;
+//             border-radius: 50%;
+//             z-index: 4;
+//         }
+//         @keyframes rotate-circle-right {
+//             0%   {
+//                 transform: rotate(0deg);
+//                 background: #f8f8f8;
+//             }
+//             100% {
+//                 transform: rotate($percentage);
+//                 background: #f8f8f8;
+//             }
+//         }
+//     }@else{
+//         &::before {
+//             content: "";
+//             display: block;
+//             position: absolute;
+//             top: 0;
+//             left: -60px;
+//             width: 120px;
+//             height: 120px;
+//             background: #f8f8f8;
+//             transform-origin: right 60px;
+//             z-index: 2;
+//             animation: rotate-circle-left $time linear forwards;
+//         }
+//         &::after {
+//             content: "";
+//             display: block;
+//             position: absolute;
+//             top: 0px;
+//             left: 60px;
+//             width: 120px;
+//             height: 120px;
+//             background: #f8f8f8;
+//             transform-origin: left 60px;
+//             z-index: 3;
+//             animation: rotate-circle-right $time linear forwards;
+//         }
+//         .circle-inner {
+//             position: absolute;
+//             top: 20px;
+//             left: 20px;
+//             width: 80px;
+//             height: 80px;
+//             line-height: 80px;
+//             background: #fff;
+//             border-radius: 50%;
+//             z-index: 4;
+//         }
+//         @keyframes rotate-circle-right {
+//             0%   {
+//                 transform: rotate(0deg);
+//                 background: #f8f8f8;
+//             }
+//             50%  {
+//                 transform: rotate(180deg);
+//                 background: #f8f8f8;
+//             }
+//             50.01% {
+//                 transform: rotate(360deg);
+//                 background: $background;
+//             }
+//             100% {
+//                 transform: rotate(360deg);
+//                 background: $background;
+//             }
+//         }
+
+//         @keyframes rotate-circle-left {
+//             0%   { transform: rotate(0deg); }
+//             50%  { transform: rotate(0deg); }
+//             100% { transform: rotate($percentage - 180deg); }
+//         }
+//     }
+    
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
