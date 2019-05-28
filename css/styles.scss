@@ -1,28 +1,30 @@
 html {
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #202020;
     body {
         margin: 0;
         padding: 0;
         background-color: #eee;
         header {
             display: flex;
-            width: 100%;;
-            height: 60px;
-            background-color: #274a78;
+            width: 100%;
+            height: 100px;
+            background-color: white;
             font-size: 30px;
             justify-content: space-between;
             h1 {
                 margin: 0 5%;
-                font-size: 24px;
-                line-height: 60px;
+                font-size: 32px;
+                line-height: 100px;
                 color: white;
             }
             .sns_icon {
                 display: inline-block;
-                width: 40px;
-                height: 40px;
-                margin: 10px 5%;
+                width: 60px;
+                height: 60px;
+                margin: 20px 5%;
                 img {
                     width: 100%;
                     height: 100%;
@@ -32,14 +34,43 @@ html {
         .wrapper {
             width: 90%;
             margin: 0 auto;
+            h2 {
+                display: inline-block;
+                width: 100%;
+                height: 30px;
+                font-size: 30px;
+                text-align: center;
+                margin: 3em auto 0;
+                color: black;
+                opacity: 0.8;
+                border-bottom: 2px dashed white;
+                .initial {
+                    background: #00a381;
+                    padding: 0 0.25em;
+                    color: white;
+                }
+            }
+            h3 {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin: 1em auto;
+                color: #a0a0a0;
+            }
+            .desc {
+                color: #a0a0a0;
+                font-weight: bold;
+                text-align: center;
+            }
             section {
                 margin: 30px 0;
+                max-width: 1200px;
+                margin: 30px auto;
             }
             .window {
-                width: 1200px;
+                width: 100%;
                 border-radius: 15px;
                 overflow: hidden;
-                margin: 30px auto;
                 box-shadow: 0 0px 10px #606060; 
                 .tabs {
                     width: 100%;
@@ -69,6 +100,7 @@ html {
                         }
                     }
                     .tab {
+                        display: flex;
                         width: 20%;
                         height: 40px;
                         margin-top: 20px;
@@ -80,11 +112,18 @@ html {
                         &:hover {
                             margin-top: 10px;
                             background-color: #333;
+                            img {
+                            margin: 10px 0 10px 10px;
+                        }
                             .tab_main {
                                 height: 30px;
                                 border: none;
                                 line-height: 40px;
                             }
+                        }
+                        img {
+                            height: 20px;
+                            margin: 0 0 20px 10px;
                         }
                         .tab_main {
                             width: 100%;
@@ -94,6 +133,9 @@ html {
                             border-right: 1px solid #404040;
                             line-height: 20px;
                             box-sizing: border-box;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                             span {
 
                             }
@@ -103,6 +145,9 @@ html {
                         margin-top: 10px;
                         background-color: #404040;
                         color: white;
+                        img {
+                            margin: 10px 0 10px 10px;
+                        }
                         .tab_main {
                             height: 30px;
                             border: none;
@@ -117,20 +162,45 @@ html {
                 .search {
                     width: 100%;
                     height: 60px;
-                    padding-top: 10px;
+                    padding: 10px 10px 0;
                     box-sizing: border-box;
                     background-color: #404040;
-                    .search_bar {
-                        width: 90%;
+                    display: flex;
+                    .search_button {
+                        width: 40px;
                         height: 40px;
-                        margin: 0 auto;
+                        // margin: 0 5px;
+                        padding: 10px;
+                        box-sizing: border-box;
+                        border-radius: 50%;
+                        &:hover {
+                            background-color: #606060;
+                        }
+                        img {
+                            width: 20px;
+                        }
+                        .rotate {
+                            transform: rotate(120deg);
+                        }
+                    }
+                    .search_bar {
+                        width: 1040px;
+                        height: 40px;
                         border-radius: 20px;
                         background-color: #333;
                         line-height: 40px;
                         padding-left: 3%;
                         box-sizing: border-box;
+                        margin-left: 10px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: white;
+                        &:hover {
+                            background-color: #393939;
+                        }
                         a {
-                            color: white;
+                            margin: 0 auto;
                             text-decoration: none;
                             font-size: 14px;
                             &:visited {
@@ -150,16 +220,25 @@ html {
                 }
             }
             .skills {
-                width: 1200px;
-                margin: 0 auto;
+                width: 100%;
                 display: flex;
                 justify-content: space-between;
+                flex-wrap: wrap;
                 .skill {
+                    $margin: 200px / 3 / 2;
                     width: 250px;
                     background-color: white;
                     padding-top: 10px;
                     box-sizing: border-box;
                     border-radius: 15px;
+                    margin: $margin 0;
+                    box-shadow: 0px 0 10px rgba(0,0,0,0.5);
+                    &:hover {
+                        $margin-top: $margin - 10;
+                        $margin-bottom: $margin + 10;
+                        box-shadow: 0px 20px 10px -10px rgba(0,0,0,0.5);
+                        margin: $margin-top 0 $margin-bottom;
+                    }
                     p {
                         text-align: center;
                         font-weight: bold;
@@ -194,6 +273,7 @@ html {
                             background: #eee;
                             transform-origin: right 60px;
                             z-index: 2;
+                            animation-delay: 3s;
                         }
                         &::after {
                             content: "";
@@ -206,6 +286,7 @@ html {
                             background: #eee;
                             transform-origin: left 60px;
                             z-index: 3;
+                            animation-delay: 3s;
                         }
                         .circle-inner {
                             position: absolute;
@@ -221,17 +302,12 @@ html {
                             img {
                                 width: 40px;
                                 margin-top: 20px;
+                                // filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
                             }
                         }
                     }
                     .circle1 {
                         @include circle(#ffbf7f);
-                        &::before {
-                            animation: rotate-circle1-left 1.5s linear forwards;
-                        }
-                        &::after {
-                            animation: rotate-circle1-right 1.5s linear forwards;
-                        }
                         @keyframes rotate-circle1-right {
                             0%   {
                                 transform: rotate(0deg);
@@ -253,17 +329,19 @@ html {
                         @keyframes rotate-circle1-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
-                            100% { transform: rotate(162deg); }
+                            100% { transform: rotate(144deg); }
+                        }
+                    }
+                    .circle1_anim {
+                        &::before {
+                            animation: rotate-circle1-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle1-right 1.5s linear 1s forwards;
                         }
                     }
                     .circle2 {
                         @include circle(#7fbfff);
-                        &::before {
-                            animation: rotate-circle2-left 1.5s linear forwards;
-                        }
-                        &::after {
-                            animation: rotate-circle2-right 1.5s linear forwards;
-                        }
                         @keyframes rotate-circle2-right {
                             0%   {
                                 transform: rotate(0deg);
@@ -285,17 +363,19 @@ html {
                         @keyframes rotate-circle2-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
-                            100% { transform: rotate(144deg); }
+                            100% { transform: rotate(108deg); }
+                        }
+                    }
+                    .circle2_anim {
+                        &::before {
+                            animation: rotate-circle2-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle2-right 1.5s linear 1s forwards;
                         }
                     }
                     .circle3 {
                         @include circle(#ffff7f);
-                        &::before {
-                            animation: rotate-circle3-left 1.5s linear forwards;
-                        }
-                        &::after {
-                            animation: rotate-circle3-right 1.5s linear forwards;
-                        }
                         @keyframes rotate-circle3-right {
                             0%   {
                                 transform: rotate(0deg);
@@ -317,15 +397,59 @@ html {
                         @keyframes rotate-circle3-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
-                            100% { transform: rotate(108deg); }
+                            100% { transform: rotate(72deg); }
+                        }
+                    }
+                    .circle3_anim {
+                        &::before {
+                            animation: rotate-circle3-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle3-right 1.5s linear 1s forwards;
                         }
                     }
                     .circle4 {
-                        @include circle(#ed7b7b);
-                        &::after {
-                            animation: rotate-circle4-right 1.5s linear forwards;
+                        @include circle(#00ad79);
+                        .circle-inner {
+                            img {
+                                margin-top: 25px;
+                            }
                         }
                         @keyframes rotate-circle4-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #00ad79;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #00ad79;
+                            }
+                        }
+                        @keyframes rotate-circle4-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(36deg); }
+                        }
+                    }
+                    .circle4_anim {
+                        &::before {
+                            animation: rotate-circle4-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle4-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .circle5 {
+                        @include circle(#ed7b7b);
+                        @keyframes rotate-circle5-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -337,154 +461,205 @@ html {
                             }
                         }
                     }
+                    .circle5_anim {
+                        &::after {
+                            animation: rotate-circle5-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .circle6 {
+                        @include circle(#7174ad);
+                        .circle-inner {
+                            img {
+                                width: 50px;
+                                margin-top: 15px;
+                            }
+                        }
+                        @keyframes rotate-circle6-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #7174ad;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #7174ad;
+                            }
+                        }
+                        @keyframes rotate-circle6-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(36deg); }
+                        }
+                    }
+                    .circle6_anim {
+                        &::before {
+                            animation: rotate-circle6-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle6-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .circle7 {
+                        @include circle(#e45e32);
+                        .circle-inner {
+                            img {
+                                width: 40px;
+                                margin-top: 20px;
+                            }
+                        }
+                        @keyframes rotate-circle7-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            100% {
+                                transform: rotate(144deg);
+                                background: #eee;
+                            }
+                        }
+                    }
+                    .circle7_anim {
+                        &::after {
+                            animation: rotate-circle7-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .circle8 {
+                        @include circle(#ee7300);
+                        .circle-inner {
+                            img {
+                                width: 40px;
+                                margin-top: 20px;
+                            }
+                        }
+                        @keyframes rotate-circle8-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #ee7300;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #ee7300;
+                            }
+                        }
+                        @keyframes rotate-circle8-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(72deg); }
+                        }
+                    }
+                    .circle8_anim {
+                        &::before {
+                            animation: rotate-circle8-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-circle8-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .circle9 {
+                        @include circle(#00b8dd);
+                        .circle-inner {
+                            img {
+                                width: 40px;
+                                margin-top: 20px;
+                            }
+                        }
+                        @keyframes rotate-circle9-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            100% {
+                                transform: rotate(108deg);
+                                background: #eee;
+                            }
+                        }
+                    }
+                    .circle9_anim {
+                        &::after {
+                            animation: rotate-circle9-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .circle10 {
+                        @include circle(#d73f90);
+                        .circle-inner {
+                            img {
+                                width: 40px;
+                                margin-top: 20px;
+                            }
+                        }
+                        @keyframes rotate-circle9-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            100% {
+                                transform: rotate(108deg);
+                                background: #eee;
+                            }
+                        }
+                    }
+                    .circle10_anim {
+                        &::after {
+                            animation: rotate-circle9-right 1.5s linear 1s forwards;
+                        }
+                    }
+                }
+                .invisible {
+                    opacity: 0;
                 }
             }
-            
+            .about {
+                width: 100%;
+                img {
+                    display: block;
+                    width: 20%;
+                    height: 20%;
+                    margin: 30px auto;
+                    border-radius: 50%;
+                    &:hover {
+                        animation: photo 0.1s linear forwards;
+                        @keyframes photo {
+                            0% {
+                                transform: scale(1);
+                            }
+                            100% {
+                                transform: scale(1.1) rotate(15deg);
+                            }
+                        }
+                    }
+                }
+                p {
+                    font-weight: bold;
+                    text-align: center;
+                    margin: 10px;
+                    &.name {
+                        font-size: 24px;
+                    }
+                    &.info {
+                        font-size: 16px;
+                        color: #a0a0a0;
+                    }
+                }
+            }
         }
         
     }
 }
-
-
-
-
-
-
-
-
-
-// @mixin graph($background: #333, $percentage: 180deg) {
-//     $time: 2000ms;
-//     position: relative;
-//     width: 120px;
-//     height: 120px;
-//     background: $background;
-//     border-radius: 50%;
-//     text-align: center;
-//     overflow: hidden;
-//     z-index: 1;
-
-//     @if $percentage <= 180 {
-//         &::before {
-//             content: "";
-//             display: block;
-//             position: absolute;
-//             top: 0;
-//             left: -60px;
-//             width: 120px;
-//             height: 120px;
-//             background: #f8f8f8;
-//             transform-origin: right 60px;
-//             z-index: 2;
-//             // animation: rotate-circle-left 2s linear forwards;
-//         }
-//         &::after {
-//             content: "";
-//             display: block;
-//             position: absolute;
-//             top: 0px;
-//             left: 60px;
-//             width: 120px;
-//             height: 120px;
-//             background: #f8f8f8;
-//             transform-origin: left 60px;
-//             z-index: 3;
-//             animation: rotate-circle-right $time linear forwards;
-//         }
-//         .circle-inner {
-//             position: absolute;
-//             top: 20px;
-//             left: 20px;
-//             width: 80px;
-//             height: 80px;
-//             line-height: 80px;
-//             background: #fff;
-//             border-radius: 50%;
-//             z-index: 4;
-//         }
-//         @keyframes rotate-circle-right {
-//             0%   {
-//                 transform: rotate(0deg);
-//                 background: #f8f8f8;
-//             }
-//             100% {
-//                 transform: rotate($percentage);
-//                 background: #f8f8f8;
-//             }
-//         }
-//     }@else{
-//         &::before {
-//             content: "";
-//             display: block;
-//             position: absolute;
-//             top: 0;
-//             left: -60px;
-//             width: 120px;
-//             height: 120px;
-//             background: #f8f8f8;
-//             transform-origin: right 60px;
-//             z-index: 2;
-//             animation: rotate-circle-left $time linear forwards;
-//         }
-//         &::after {
-//             content: "";
-//             display: block;
-//             position: absolute;
-//             top: 0px;
-//             left: 60px;
-//             width: 120px;
-//             height: 120px;
-//             background: #f8f8f8;
-//             transform-origin: left 60px;
-//             z-index: 3;
-//             animation: rotate-circle-right $time linear forwards;
-//         }
-//         .circle-inner {
-//             position: absolute;
-//             top: 20px;
-//             left: 20px;
-//             width: 80px;
-//             height: 80px;
-//             line-height: 80px;
-//             background: #fff;
-//             border-radius: 50%;
-//             z-index: 4;
-//         }
-//         @keyframes rotate-circle-right {
-//             0%   {
-//                 transform: rotate(0deg);
-//                 background: #f8f8f8;
-//             }
-//             50%  {
-//                 transform: rotate(180deg);
-//                 background: #f8f8f8;
-//             }
-//             50.01% {
-//                 transform: rotate(360deg);
-//                 background: $background;
-//             }
-//             100% {
-//                 transform: rotate(360deg);
-//                 background: $background;
-//             }
-//         }
-
-//         @keyframes rotate-circle-left {
-//             0%   { transform: rotate(0deg); }
-//             50%  { transform: rotate(0deg); }
-//             100% { transform: rotate($percentage - 180deg); }
-//         }
-//     }
-    
-// }
-
-
-
-
-
-
-
-
 
 
 
