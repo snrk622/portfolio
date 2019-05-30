@@ -8,21 +8,25 @@ html {
     padding: 0;
     background-color: #eee; }
     html body header {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
       width: 100%;
       height: 100px;
-      background-color: white;
-      font-size: 30px;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
+      font-size: 30px; }
       html body header h1 {
-        margin: 0 5%;
-        font-size: 32px;
-        line-height: 100px;
-        color: white; }
+        height: 80px;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 80px;
+        color: transparent;
+        text-align: center;
+        -webkit-text-stroke: 3px #333;
+        letter-spacing: 0.2em;
+        background: -webkit-gradient(linear, left bottom, left top, from(#00a381), color-stop(42%, #00a381), color-stop(43%, #eee), to(#eee));
+        background: -webkit-linear-gradient(bottom, #00a381 0%, #00a381 42%, #eee 43%, #eee 100%);
+        background: -o-linear-gradient(bottom, #00a381 0%, #00a381 42%, #eee 43%, #eee 100%);
+        background: linear-gradient(bottom, #00a381 0%, #00a381 42%, #eee 43%, #eee 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; }
       html body header .sns_icon {
         display: inline-block;
         width: 60px;
@@ -31,6 +35,41 @@ html {
         html body header .sns_icon img {
           width: 100%;
           height: 100%; }
+    html body .top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: white;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 3000; }
+      html body .top img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: block;
+        width: 30px;
+        -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+        z-index: 1; }
+      html body .top .scroll-color {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background: #00a381; }
+      @media screen and (max-width: 1000px) {
+        html body .top {
+          width: 80px;
+          height: 80px; }
+          html body .top img {
+            top: 20px;
+            left: 20px;
+            width: 40px; } }
     html body .wrapper {
       width: 90%;
       margin: 0 auto; }
@@ -50,10 +89,15 @@ html {
           color: white; }
       html body .wrapper h3 {
         display: block;
-        width: 100%;
+        padding: 1em;
         text-align: center;
-        margin: 1em auto;
-        color: #a0a0a0; }
+        margin: 0 auto;
+        color: #808080; }
+        html body .wrapper h3 span {
+          border-top: 1px dashed #808080;
+          border-bottom: 1px dashed #808080;
+          padding: 0.3em;
+          background: rgba(255, 255, 255, 0.5); }
       html body .wrapper .desc {
         color: #a0a0a0;
         font-weight: bold;
@@ -66,8 +110,8 @@ html {
         width: 100%;
         border-radius: 15px;
         overflow: hidden;
-        -webkit-box-shadow: 0 0px 10px #606060;
-        box-shadow: 0 0px 10px #606060; }
+        -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5); }
         html body .wrapper .window .tabs {
           width: 100%;
           height: 50px;
@@ -189,7 +233,8 @@ html {
             html body .wrapper .window .search .search_bar a {
               margin: 0 auto;
               text-decoration: none;
-              font-size: 14px; }
+              font-size: 14px;
+              color: white; }
               html body .wrapper .window .search .search_bar a:visited {
                 color: white; }
         html body .wrapper .window .contents {
@@ -217,8 +262,8 @@ html {
           box-sizing: border-box;
           border-radius: 15px;
           margin: 33.33333px 0;
-          -webkit-box-shadow: 0px 0 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0 10px rgba(0, 0, 0, 0.5); }
+          -webkit-box-shadow: 0px 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0 5px rgba(0, 0, 0, 0.5); }
           html body .wrapper .skills .skill:hover {
             -webkit-box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.5);
             box-shadow: 0px 20px 10px -10px rgba(0, 0, 0, 0.5);
@@ -233,7 +278,7 @@ html {
             font-size: 20px;
             border-top: 1px dashed #eee;
             line-height: 50px; }
-          html body .wrapper .skills .skill .circle1 {
+          html body .wrapper .skills .skill .html {
             position: relative;
             width: 120px;
             height: 120px;
@@ -245,7 +290,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle1::before {
+            html body .wrapper .skills .skill .html::before {
               content: "";
               display: block;
               position: absolute;
@@ -260,7 +305,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle1::after {
+            html body .wrapper .skills .skill .html::after {
               content: "";
               display: block;
               position: absolute;
@@ -275,7 +320,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle1 .circle-inner {
+            html body .wrapper .skills .skill .html .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -287,11 +332,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle1 .circle-inner img {
+              html body .wrapper .skills .skill .html .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
+            html body .wrapper .skills .skill .html .circle-inner img {
+              width: 35px;
+              margin-top: 22.5px; }
 
-@-webkit-keyframes rotate-circle1-right {
+@-webkit-keyframes rotate-html-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -309,7 +357,7 @@ html {
     transform: rotate(360deg);
     background: #ffbf7f; } }
 
-@keyframes rotate-circle1-right {
+@keyframes rotate-html-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -327,7 +375,7 @@ html {
     transform: rotate(360deg);
     background: #ffbf7f; } }
 
-@-webkit-keyframes rotate-circle1-left {
+@-webkit-keyframes rotate-html-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -338,7 +386,7 @@ html {
     -webkit-transform: rotate(144deg);
     transform: rotate(144deg); } }
 
-@keyframes rotate-circle1-left {
+@keyframes rotate-html-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -348,13 +396,13 @@ html {
   100% {
     -webkit-transform: rotate(144deg);
     transform: rotate(144deg); } }
-          html body .wrapper .skills .skill .circle1_anim::before {
-            -webkit-animation: rotate-circle1-left 1.5s linear 1s forwards;
-            animation: rotate-circle1-left 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle1_anim::after {
-            -webkit-animation: rotate-circle1-right 1.5s linear 1s forwards;
-            animation: rotate-circle1-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle2 {
+          html body .wrapper .skills .skill .html_anim::before {
+            -webkit-animation: rotate-html-left 1.5s linear 1s forwards;
+            animation: rotate-html-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .html_anim::after {
+            -webkit-animation: rotate-html-right 1.5s linear 1s forwards;
+            animation: rotate-html-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .css {
             position: relative;
             width: 120px;
             height: 120px;
@@ -366,7 +414,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle2::before {
+            html body .wrapper .skills .skill .css::before {
               content: "";
               display: block;
               position: absolute;
@@ -381,7 +429,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle2::after {
+            html body .wrapper .skills .skill .css::after {
               content: "";
               display: block;
               position: absolute;
@@ -396,7 +444,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle2 .circle-inner {
+            html body .wrapper .skills .skill .css .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -408,11 +456,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle2 .circle-inner img {
+              html body .wrapper .skills .skill .css .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
+            html body .wrapper .skills .skill .css .circle-inner img {
+              width: 35px;
+              margin-top: 22.5px; }
 
-@-webkit-keyframes rotate-circle2-right {
+@-webkit-keyframes rotate-css-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -430,7 +481,7 @@ html {
     transform: rotate(360deg);
     background: #7fbfff; } }
 
-@keyframes rotate-circle2-right {
+@keyframes rotate-css-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -448,7 +499,7 @@ html {
     transform: rotate(360deg);
     background: #7fbfff; } }
 
-@-webkit-keyframes rotate-circle2-left {
+@-webkit-keyframes rotate-css-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -459,7 +510,7 @@ html {
     -webkit-transform: rotate(108deg);
     transform: rotate(108deg); } }
 
-@keyframes rotate-circle2-left {
+@keyframes rotate-css-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -469,13 +520,13 @@ html {
   100% {
     -webkit-transform: rotate(108deg);
     transform: rotate(108deg); } }
-          html body .wrapper .skills .skill .circle2_anim::before {
-            -webkit-animation: rotate-circle2-left 1.5s linear 1s forwards;
-            animation: rotate-circle2-left 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle2_anim::after {
-            -webkit-animation: rotate-circle2-right 1.5s linear 1s forwards;
-            animation: rotate-circle2-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle3 {
+          html body .wrapper .skills .skill .css_anim::before {
+            -webkit-animation: rotate-css-left 1.5s linear 1s forwards;
+            animation: rotate-css-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .css_anim::after {
+            -webkit-animation: rotate-css-right 1.5s linear 1s forwards;
+            animation: rotate-css-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .js {
             position: relative;
             width: 120px;
             height: 120px;
@@ -487,7 +538,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle3::before {
+            html body .wrapper .skills .skill .js::before {
               content: "";
               display: block;
               position: absolute;
@@ -502,7 +553,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle3::after {
+            html body .wrapper .skills .skill .js::after {
               content: "";
               display: block;
               position: absolute;
@@ -517,7 +568,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle3 .circle-inner {
+            html body .wrapper .skills .skill .js .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -529,11 +580,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle3 .circle-inner img {
+              html body .wrapper .skills .skill .js .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
+            html body .wrapper .skills .skill .js .circle-inner img {
+              width: 35px;
+              margin-top: 22.5px; }
 
-@-webkit-keyframes rotate-circle3-right {
+@-webkit-keyframes rotate-js-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -551,7 +605,7 @@ html {
     transform: rotate(360deg);
     background: #ffff7f; } }
 
-@keyframes rotate-circle3-right {
+@keyframes rotate-js-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -569,7 +623,7 @@ html {
     transform: rotate(360deg);
     background: #ffff7f; } }
 
-@-webkit-keyframes rotate-circle3-left {
+@-webkit-keyframes rotate-js-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -580,7 +634,7 @@ html {
     -webkit-transform: rotate(72deg);
     transform: rotate(72deg); } }
 
-@keyframes rotate-circle3-left {
+@keyframes rotate-js-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -590,13 +644,13 @@ html {
   100% {
     -webkit-transform: rotate(72deg);
     transform: rotate(72deg); } }
-          html body .wrapper .skills .skill .circle3_anim::before {
-            -webkit-animation: rotate-circle3-left 1.5s linear 1s forwards;
-            animation: rotate-circle3-left 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle3_anim::after {
-            -webkit-animation: rotate-circle3-right 1.5s linear 1s forwards;
-            animation: rotate-circle3-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle4 {
+          html body .wrapper .skills .skill .js_anim::before {
+            -webkit-animation: rotate-js-left 1.5s linear 1s forwards;
+            animation: rotate-js-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .js_anim::after {
+            -webkit-animation: rotate-js-right 1.5s linear 1s forwards;
+            animation: rotate-js-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .vue {
             position: relative;
             width: 120px;
             height: 120px;
@@ -608,7 +662,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle4::before {
+            html body .wrapper .skills .skill .vue::before {
               content: "";
               display: block;
               position: absolute;
@@ -623,7 +677,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle4::after {
+            html body .wrapper .skills .skill .vue::after {
               content: "";
               display: block;
               position: absolute;
@@ -638,7 +692,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle4 .circle-inner {
+            html body .wrapper .skills .skill .vue .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -650,13 +704,13 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle4 .circle-inner img {
+              html body .wrapper .skills .skill .vue .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
-            html body .wrapper .skills .skill .circle4 .circle-inner img {
+            html body .wrapper .skills .skill .vue .circle-inner img {
               margin-top: 25px; }
 
-@-webkit-keyframes rotate-circle4-right {
+@-webkit-keyframes rotate-vue-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -674,7 +728,7 @@ html {
     transform: rotate(360deg);
     background: #00ad79; } }
 
-@keyframes rotate-circle4-right {
+@keyframes rotate-vue-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -692,7 +746,7 @@ html {
     transform: rotate(360deg);
     background: #00ad79; } }
 
-@-webkit-keyframes rotate-circle4-left {
+@-webkit-keyframes rotate-vue-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -703,7 +757,7 @@ html {
     -webkit-transform: rotate(36deg);
     transform: rotate(36deg); } }
 
-@keyframes rotate-circle4-left {
+@keyframes rotate-vue-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -713,13 +767,13 @@ html {
   100% {
     -webkit-transform: rotate(36deg);
     transform: rotate(36deg); } }
-          html body .wrapper .skills .skill .circle4_anim::before {
-            -webkit-animation: rotate-circle4-left 1.5s linear 1s forwards;
-            animation: rotate-circle4-left 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle4_anim::after {
-            -webkit-animation: rotate-circle4-right 1.5s linear 1s forwards;
-            animation: rotate-circle4-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle5 {
+          html body .wrapper .skills .skill .vue_anim::before {
+            -webkit-animation: rotate-vue-left 1.5s linear 1s forwards;
+            animation: rotate-vue-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .vue_anim::after {
+            -webkit-animation: rotate-vue-right 1.5s linear 1s forwards;
+            animation: rotate-vue-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .ruby {
             position: relative;
             width: 120px;
             height: 120px;
@@ -731,7 +785,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle5::before {
+            html body .wrapper .skills .skill .ruby::before {
               content: "";
               display: block;
               position: absolute;
@@ -746,7 +800,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle5::after {
+            html body .wrapper .skills .skill .ruby::after {
               content: "";
               display: block;
               position: absolute;
@@ -761,7 +815,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle5 .circle-inner {
+            html body .wrapper .skills .skill .ruby .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -773,11 +827,13 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle5 .circle-inner img {
+              html body .wrapper .skills .skill .ruby .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
+            html body .wrapper .skills .skill .ruby .circle-inner img {
+              margin-top: 25px; }
 
-@-webkit-keyframes rotate-circle5-right {
+@-webkit-keyframes rotate-ruby-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -787,7 +843,7 @@ html {
     transform: rotate(180deg);
     background: #eee; } }
 
-@keyframes rotate-circle5-right {
+@keyframes rotate-ruby-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -796,10 +852,10 @@ html {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     background: #eee; } }
-          html body .wrapper .skills .skill .circle5_anim::after {
-            -webkit-animation: rotate-circle5-right 1.5s linear 1s forwards;
-            animation: rotate-circle5-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle6 {
+          html body .wrapper .skills .skill .ruby_anim::after {
+            -webkit-animation: rotate-ruby-right 1.5s linear 1s forwards;
+            animation: rotate-ruby-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .php {
             position: relative;
             width: 120px;
             height: 120px;
@@ -811,7 +867,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle6::before {
+            html body .wrapper .skills .skill .php::before {
               content: "";
               display: block;
               position: absolute;
@@ -826,7 +882,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle6::after {
+            html body .wrapper .skills .skill .php::after {
               content: "";
               display: block;
               position: absolute;
@@ -841,7 +897,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle6 .circle-inner {
+            html body .wrapper .skills .skill .php .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -853,14 +909,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle6 .circle-inner img {
+              html body .wrapper .skills .skill .php .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
-            html body .wrapper .skills .skill .circle6 .circle-inner img {
+            html body .wrapper .skills .skill .php .circle-inner img {
               width: 50px;
-              margin-top: 15px; }
+              margin-top: 25px; }
 
-@-webkit-keyframes rotate-circle6-right {
+@-webkit-keyframes rotate-php-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -878,7 +934,7 @@ html {
     transform: rotate(360deg);
     background: #7174ad; } }
 
-@keyframes rotate-circle6-right {
+@keyframes rotate-php-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -896,7 +952,7 @@ html {
     transform: rotate(360deg);
     background: #7174ad; } }
 
-@-webkit-keyframes rotate-circle6-left {
+@-webkit-keyframes rotate-php-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -907,7 +963,7 @@ html {
     -webkit-transform: rotate(36deg);
     transform: rotate(36deg); } }
 
-@keyframes rotate-circle6-left {
+@keyframes rotate-php-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -917,13 +973,13 @@ html {
   100% {
     -webkit-transform: rotate(36deg);
     transform: rotate(36deg); } }
-          html body .wrapper .skills .skill .circle6_anim::before {
-            -webkit-animation: rotate-circle6-left 1.5s linear 1s forwards;
-            animation: rotate-circle6-left 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle6_anim::after {
-            -webkit-animation: rotate-circle6-right 1.5s linear 1s forwards;
-            animation: rotate-circle6-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle7 {
+          html body .wrapper .skills .skill .php_anim::before {
+            -webkit-animation: rotate-php-left 1.5s linear 1s forwards;
+            animation: rotate-php-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .php_anim::after {
+            -webkit-animation: rotate-php-right 1.5s linear 1s forwards;
+            animation: rotate-php-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .swift {
             position: relative;
             width: 120px;
             height: 120px;
@@ -935,7 +991,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle7::before {
+            html body .wrapper .skills .skill .swift::before {
               content: "";
               display: block;
               position: absolute;
@@ -950,7 +1006,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle7::after {
+            html body .wrapper .skills .skill .swift::after {
               content: "";
               display: block;
               position: absolute;
@@ -965,7 +1021,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle7 .circle-inner {
+            html body .wrapper .skills .skill .swift .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -977,14 +1033,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle7 .circle-inner img {
+              html body .wrapper .skills .skill .swift .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
-            html body .wrapper .skills .skill .circle7 .circle-inner img {
+            html body .wrapper .skills .skill .swift .circle-inner img {
               width: 40px;
               margin-top: 20px; }
 
-@-webkit-keyframes rotate-circle7-right {
+@-webkit-keyframes rotate-swift-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -994,7 +1050,7 @@ html {
     transform: rotate(144deg);
     background: #eee; } }
 
-@keyframes rotate-circle7-right {
+@keyframes rotate-swift-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1003,10 +1059,134 @@ html {
     -webkit-transform: rotate(144deg);
     transform: rotate(144deg);
     background: #eee; } }
-          html body .wrapper .skills .skill .circle7_anim::after {
-            -webkit-animation: rotate-circle7-right 1.5s linear 1s forwards;
-            animation: rotate-circle7-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle8 {
+          html body .wrapper .skills .skill .swift_anim::after {
+            -webkit-animation: rotate-swift-right 1.5s linear 1s forwards;
+            animation: rotate-swift-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .sql {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background: #006489;
+            border-radius: 50%;
+            text-align: center;
+            overflow: hidden;
+            margin: 30px auto 0;
+            z-index: 1;
+            -webkit-box-shadow: 0 0 5px #a0a0a0;
+            box-shadow: 0 0 5px #a0a0a0; }
+            html body .wrapper .skills .skill .sql::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0;
+              left: -60px;
+              width: 120px;
+              height: 120px;
+              background: #eee;
+              -webkit-transform-origin: right 60px;
+              -ms-transform-origin: right 60px;
+              transform-origin: right 60px;
+              z-index: 2;
+              -webkit-animation-delay: 3s;
+              animation-delay: 3s; }
+            html body .wrapper .skills .skill .sql::after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0px;
+              left: 60px;
+              width: 120px;
+              height: 120px;
+              background: #eee;
+              -webkit-transform-origin: left 60px;
+              -ms-transform-origin: left 60px;
+              transform-origin: left 60px;
+              z-index: 3;
+              -webkit-animation-delay: 3s;
+              animation-delay: 3s; }
+            html body .wrapper .skills .skill .sql .circle-inner {
+              position: absolute;
+              top: 20px;
+              left: 20px;
+              width: 80px;
+              height: 80px;
+              line-height: 80px;
+              background: white;
+              border-radius: 50%;
+              z-index: 4;
+              -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+              html body .wrapper .skills .skill .sql .circle-inner img {
+                width: 40px;
+                margin-top: 20px; }
+            html body .wrapper .skills .skill .sql .circle-inner img {
+              width: 30px;
+              margin-top: 20px; }
+
+@-webkit-keyframes rotate-sql-right {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background: #eee; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background: #eee; }
+  50.01% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background: #006489; }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background: #006489; } }
+
+@keyframes rotate-sql-right {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background: #eee; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background: #eee; }
+  50.01% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background: #006489; }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background: #006489; } }
+
+@-webkit-keyframes rotate-sql-left {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(72deg);
+    transform: rotate(72deg); } }
+
+@keyframes rotate-sql-left {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(72deg);
+    transform: rotate(72deg); } }
+          html body .wrapper .skills .skill .sql_anim::before {
+            -webkit-animation: rotate-sql-left 1.5s linear 1s forwards;
+            animation: rotate-sql-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .sql_anim::after {
+            -webkit-animation: rotate-sql-right 1.5s linear 1s forwards;
+            animation: rotate-sql-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .ai {
             position: relative;
             width: 120px;
             height: 120px;
@@ -1018,7 +1198,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle8::before {
+            html body .wrapper .skills .skill .ai::before {
               content: "";
               display: block;
               position: absolute;
@@ -1033,7 +1213,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle8::after {
+            html body .wrapper .skills .skill .ai::after {
               content: "";
               display: block;
               position: absolute;
@@ -1048,7 +1228,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle8 .circle-inner {
+            html body .wrapper .skills .skill .ai .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -1060,14 +1240,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle8 .circle-inner img {
+              html body .wrapper .skills .skill .ai .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
-            html body .wrapper .skills .skill .circle8 .circle-inner img {
+            html body .wrapper .skills .skill .ai .circle-inner img {
               width: 40px;
               margin-top: 20px; }
 
-@-webkit-keyframes rotate-circle8-right {
+@-webkit-keyframes rotate-ai-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1085,7 +1265,7 @@ html {
     transform: rotate(360deg);
     background: #ee7300; } }
 
-@keyframes rotate-circle8-right {
+@keyframes rotate-ai-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1103,7 +1283,7 @@ html {
     transform: rotate(360deg);
     background: #ee7300; } }
 
-@-webkit-keyframes rotate-circle8-left {
+@-webkit-keyframes rotate-ai-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -1114,7 +1294,7 @@ html {
     -webkit-transform: rotate(72deg);
     transform: rotate(72deg); } }
 
-@keyframes rotate-circle8-left {
+@keyframes rotate-ai-left {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
@@ -1124,13 +1304,13 @@ html {
   100% {
     -webkit-transform: rotate(72deg);
     transform: rotate(72deg); } }
-          html body .wrapper .skills .skill .circle8_anim::before {
-            -webkit-animation: rotate-circle8-left 1.5s linear 1s forwards;
-            animation: rotate-circle8-left 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle8_anim::after {
-            -webkit-animation: rotate-circle8-right 1.5s linear 1s forwards;
-            animation: rotate-circle8-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle9 {
+          html body .wrapper .skills .skill .ai_anim::before {
+            -webkit-animation: rotate-ai-left 1.5s linear 1s forwards;
+            animation: rotate-ai-left 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .ai_anim::after {
+            -webkit-animation: rotate-ai-right 1.5s linear 1s forwards;
+            animation: rotate-ai-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .ps {
             position: relative;
             width: 120px;
             height: 120px;
@@ -1142,7 +1322,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle9::before {
+            html body .wrapper .skills .skill .ps::before {
               content: "";
               display: block;
               position: absolute;
@@ -1157,7 +1337,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle9::after {
+            html body .wrapper .skills .skill .ps::after {
               content: "";
               display: block;
               position: absolute;
@@ -1172,7 +1352,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle9 .circle-inner {
+            html body .wrapper .skills .skill .ps .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -1184,14 +1364,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle9 .circle-inner img {
+              html body .wrapper .skills .skill .ps .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
-            html body .wrapper .skills .skill .circle9 .circle-inner img {
+            html body .wrapper .skills .skill .ps .circle-inner img {
               width: 40px;
               margin-top: 20px; }
 
-@-webkit-keyframes rotate-circle9-right {
+@-webkit-keyframes rotate-ps-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1201,7 +1381,7 @@ html {
     transform: rotate(108deg);
     background: #eee; } }
 
-@keyframes rotate-circle9-right {
+@keyframes rotate-ps-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1210,10 +1390,10 @@ html {
     -webkit-transform: rotate(108deg);
     transform: rotate(108deg);
     background: #eee; } }
-          html body .wrapper .skills .skill .circle9_anim::after {
-            -webkit-animation: rotate-circle9-right 1.5s linear 1s forwards;
-            animation: rotate-circle9-right 1.5s linear 1s forwards; }
-          html body .wrapper .skills .skill .circle10 {
+          html body .wrapper .skills .skill .ps_anim::after {
+            -webkit-animation: rotate-ps-right 1.5s linear 1s forwards;
+            animation: rotate-ps-right 1.5s linear 1s forwards; }
+          html body .wrapper .skills .skill .xd {
             position: relative;
             width: 120px;
             height: 120px;
@@ -1225,7 +1405,7 @@ html {
             z-index: 1;
             -webkit-box-shadow: 0 0 5px #a0a0a0;
             box-shadow: 0 0 5px #a0a0a0; }
-            html body .wrapper .skills .skill .circle10::before {
+            html body .wrapper .skills .skill .xd::before {
               content: "";
               display: block;
               position: absolute;
@@ -1240,7 +1420,7 @@ html {
               z-index: 2;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle10::after {
+            html body .wrapper .skills .skill .xd::after {
               content: "";
               display: block;
               position: absolute;
@@ -1255,7 +1435,7 @@ html {
               z-index: 3;
               -webkit-animation-delay: 3s;
               animation-delay: 3s; }
-            html body .wrapper .skills .skill .circle10 .circle-inner {
+            html body .wrapper .skills .skill .xd .circle-inner {
               position: absolute;
               top: 20px;
               left: 20px;
@@ -1267,14 +1447,14 @@ html {
               z-index: 4;
               -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
-              html body .wrapper .skills .skill .circle10 .circle-inner img {
+              html body .wrapper .skills .skill .xd .circle-inner img {
                 width: 40px;
                 margin-top: 20px; }
-            html body .wrapper .skills .skill .circle10 .circle-inner img {
+            html body .wrapper .skills .skill .xd .circle-inner img {
               width: 40px;
               margin-top: 20px; }
 
-@keyframes rotate-circle9-right {
+@-webkit-keyframes rotate-xd-right {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1283,20 +1463,52 @@ html {
     -webkit-transform: rotate(108deg);
     transform: rotate(108deg);
     background: #eee; } }
-          html body .wrapper .skills .skill .circle10_anim::after {
-            -webkit-animation: rotate-circle9-right 1.5s linear 1s forwards;
-            animation: rotate-circle9-right 1.5s linear 1s forwards; }
+
+@keyframes rotate-xd-right {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background: #eee; }
+  100% {
+    -webkit-transform: rotate(108deg);
+    transform: rotate(108deg);
+    background: #eee; } }
+          html body .wrapper .skills .skill .xd_anim::after {
+            -webkit-animation: rotate-xd-right 1.5s linear 1s forwards;
+            animation: rotate-xd-right 1.5s linear 1s forwards; }
         html body .wrapper .skills .invisible {
-          opacity: 0; }
+          height: 0;
+          opacity: 0;
+          padding: 0;
+          margin: 0; }
       html body .wrapper .about {
-        width: 100%; }
-        html body .wrapper .about img {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; }
+        @media screen and (max-width: 1000px) {
+          html body .wrapper .about {
+            display: inline-block; }
+            html body .wrapper .about .right {
+              width: 80%;
+              margin: 50px auto 0; }
+              html body .wrapper .about .right p {
+                text-align: center; } }
+        html body .wrapper .about .left img {
           display: block;
-          width: 20%;
-          height: 20%;
+          width: 40%;
+          height: auto;
           margin: 30px auto;
-          border-radius: 50%; }
-          html body .wrapper .about img:hover {
+          border-radius: 50%;
+          -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5); }
+          html body .wrapper .about .left img:hover {
             -webkit-animation: photo 0.1s linear forwards;
             animation: photo 0.1s linear forwards; }
 
@@ -1315,12 +1527,74 @@ html {
   100% {
     -webkit-transform: scale(1.1) rotate(15deg);
     transform: scale(1.1) rotate(15deg); } }
-        html body .wrapper .about p {
+        html body .wrapper .about .left p {
           font-weight: bold;
           text-align: center;
           margin: 10px; }
-          html body .wrapper .about p.name {
+          html body .wrapper .about .left p.name {
             font-size: 24px; }
-          html body .wrapper .about p.info {
+          html body .wrapper .about .left p.info {
             font-size: 16px;
             color: #a0a0a0; }
+        html body .wrapper .about .right p {
+          font-size: 16px;
+          font-weight: bold; }
+          html body .wrapper .about .right p span {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, #ffff66));
+            background: -webkit-linear-gradient(transparent 60%, #ffff66 60%);
+            background: -o-linear-gradient(transparent 60%, #ffff66 60%);
+            background: linear-gradient(transparent 60%, #ffff66 60%); }
+        html body .wrapper .about .right ul {
+          padding-left: 1em; }
+          html body .wrapper .about .right ul li {
+            list-style: none;
+            color: #808080;
+            margin: 0.5em 0; }
+            html body .wrapper .about .right ul li .when {
+              background-color: #606060;
+              color: white;
+              padding: 0 0.2em;
+              margin: 0 0.5em;
+              border-radius: 0.2em; }
+              html body .wrapper .about .right ul li .when .already {
+                color: #666; }
+            html body .wrapper .about .right ul li .skill {
+              border-bottom: 1px dashed #00a381; }
+            html body .wrapper .about .right ul li a {
+              color: #808080; }
+              html body .wrapper .about .right ul li a:visited {
+                color: #808080; }
+    html body footer {
+      width: 100%;
+      margin: 100px 0 0; }
+      html body footer img {
+        display: block;
+        width: 15%;
+        margin: 0 10% 0 auto;
+        text-align: right; }
+      html body footer .footer {
+        width: 100%;
+        background-color: #333;
+        padding: 20px 0 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+        html body footer .footer p {
+          margin: 0;
+          text-align: center;
+          color: white; }
+          html body footer .footer p a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dashed white; }
+            html body footer .footer p a:visited {
+              color: white; }
+        html body footer .footer .github {
+          display: block;
+          width: 2em;
+          margin: 20px auto; }
+          html body footer .footer .github img {
+            width: 100%; }
+            html body footer .footer .github img:hover {
+              -webkit-transform: scale(1.2);
+              -ms-transform: scale(1.2);
+              transform: scale(1.2); }

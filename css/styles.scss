@@ -8,17 +8,22 @@ html {
         padding: 0;
         background-color: #eee;
         header {
-            display: flex;
             width: 100%;
             height: 100px;
-            background-color: white;
             font-size: 30px;
-            justify-content: space-between;
             h1 {
-                margin: 0 5%;
-                font-size: 32px;
-                line-height: 100px;
-                color: white;
+                // display: inline-block;
+                height: 80px;
+                padding: 0;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 80px;
+                color: transparent;
+                text-align: center;
+                -webkit-text-stroke: 3px #333;
+                letter-spacing: 0.2em;
+                background: linear-gradient(bottom, #00a381 0%, #00a381 42%, #eee 43%, #eee 100%);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
             .sns_icon {
                 display: inline-block;
@@ -31,6 +36,44 @@ html {
                 }
             }
         }
+        .top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: white;
+                box-shadow: 0 0 5px rgba(0,0,0,0.5);
+                overflow: hidden;
+                cursor: pointer;
+                z-index: 3000;
+                img {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: block;
+                    width: 30px;
+                    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+                    z-index: 1;
+                }
+                .scroll-color {
+                    width: 100%;
+                    // height: 50%;
+                    position: absolute;
+                    bottom: 0;
+                    background: #00a381;
+                }
+                @media screen and (max-width: 1000px){
+                    width: 80px;
+                    height: 80px;
+                    img {
+                        top: 20px;
+                        left: 20px;
+                        width: 40px;
+                    }
+                }
+            }
         .wrapper {
             width: 90%;
             margin: 0 auto;
@@ -52,10 +95,17 @@ html {
             }
             h3 {
                 display: block;
-                width: 100%;
+                padding: 1em;
                 text-align: center;
-                margin: 1em auto;
-                color: #a0a0a0;
+                margin: 0 auto;
+                color: #808080;
+                span {
+                    // background: linear-gradient(transparent 60%, #99bfb1 60%);
+                    border-top: 1px dashed #808080;
+                    border-bottom: 1px dashed #808080;
+                    padding: 0.3em;
+                    background: rgba($color: white, $alpha: 0.5);
+                }
             }
             .desc {
                 color: #a0a0a0;
@@ -71,7 +121,7 @@ html {
                 width: 100%;
                 border-radius: 15px;
                 overflow: hidden;
-                box-shadow: 0 0px 10px #606060; 
+                box-shadow: 0 0px 5px rgba(0,0,0,0.5); 
                 .tabs {
                     width: 100%;
                     height: 50px;
@@ -203,6 +253,7 @@ html {
                             margin: 0 auto;
                             text-decoration: none;
                             font-size: 14px;
+                            color: white;
                             &:visited {
                                 color: white;
                             }
@@ -232,7 +283,7 @@ html {
                     box-sizing: border-box;
                     border-radius: 15px;
                     margin: $margin 0;
-                    box-shadow: 0px 0 10px rgba(0,0,0,0.5);
+                    box-shadow: 0px 0 5px rgba(0,0,0,0.5);
                     &:hover {
                         $margin-top: $margin - 10;
                         $margin-bottom: $margin + 10;
@@ -306,9 +357,15 @@ html {
                             }
                         }
                     }
-                    .circle1 {
+                    .html {
                         @include circle(#ffbf7f);
-                        @keyframes rotate-circle1-right {
+                        .circle-inner {
+                            img {
+                                width: 35px;
+                                margin-top: 22.5px;
+                            }
+                        }
+                        @keyframes rotate-html-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -326,23 +383,29 @@ html {
                                 background: #ffbf7f;
                             }
                         }
-                        @keyframes rotate-circle1-left {
+                        @keyframes rotate-html-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
                             100% { transform: rotate(144deg); }
                         }
                     }
-                    .circle1_anim {
+                    .html_anim {
                         &::before {
-                            animation: rotate-circle1-left 1.5s linear 1s forwards;
+                            animation: rotate-html-left 1.5s linear 1s forwards;
                         }
                         &::after {
-                            animation: rotate-circle1-right 1.5s linear 1s forwards;
+                            animation: rotate-html-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle2 {
+                    .css {
                         @include circle(#7fbfff);
-                        @keyframes rotate-circle2-right {
+                        .circle-inner {
+                            img {
+                                width: 35px;
+                                margin-top: 22.5px;
+                            }
+                        }
+                        @keyframes rotate-css-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -360,23 +423,29 @@ html {
                                 background: #7fbfff;
                             }
                         }
-                        @keyframes rotate-circle2-left {
+                        @keyframes rotate-css-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
                             100% { transform: rotate(108deg); }
                         }
                     }
-                    .circle2_anim {
+                    .css_anim {
                         &::before {
-                            animation: rotate-circle2-left 1.5s linear 1s forwards;
+                            animation: rotate-css-left 1.5s linear 1s forwards;
                         }
                         &::after {
-                            animation: rotate-circle2-right 1.5s linear 1s forwards;
+                            animation: rotate-css-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle3 {
+                    .js {
                         @include circle(#ffff7f);
-                        @keyframes rotate-circle3-right {
+                        .circle-inner {
+                            img {
+                                width: 35px;
+                                margin-top: 22.5px;
+                            }
+                        }
+                        @keyframes rotate-js-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -394,28 +463,28 @@ html {
                                 background: #ffff7f;
                             }
                         }
-                        @keyframes rotate-circle3-left {
+                        @keyframes rotate-js-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
                             100% { transform: rotate(72deg); }
                         }
                     }
-                    .circle3_anim {
+                    .js_anim {
                         &::before {
-                            animation: rotate-circle3-left 1.5s linear 1s forwards;
+                            animation: rotate-js-left 1.5s linear 1s forwards;
                         }
                         &::after {
-                            animation: rotate-circle3-right 1.5s linear 1s forwards;
+                            animation: rotate-js-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle4 {
+                    .vue {
                         @include circle(#00ad79);
                         .circle-inner {
                             img {
                                 margin-top: 25px;
                             }
                         }
-                        @keyframes rotate-circle4-right {
+                        @keyframes rotate-vue-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -433,23 +502,28 @@ html {
                                 background: #00ad79;
                             }
                         }
-                        @keyframes rotate-circle4-left {
+                        @keyframes rotate-vue-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
                             100% { transform: rotate(36deg); }
                         }
                     }
-                    .circle4_anim {
+                    .vue_anim {
                         &::before {
-                            animation: rotate-circle4-left 1.5s linear 1s forwards;
+                            animation: rotate-vue-left 1.5s linear 1s forwards;
                         }
                         &::after {
-                            animation: rotate-circle4-right 1.5s linear 1s forwards;
+                            animation: rotate-vue-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle5 {
+                    .ruby {
                         @include circle(#ed7b7b);
-                        @keyframes rotate-circle5-right {
+                        .circle-inner {
+                            img {
+                                margin-top: 25px;
+                            }
+                        }
+                        @keyframes rotate-ruby-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -461,20 +535,20 @@ html {
                             }
                         }
                     }
-                    .circle5_anim {
+                    .ruby_anim {
                         &::after {
-                            animation: rotate-circle5-right 1.5s linear 1s forwards;
+                            animation: rotate-ruby-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle6 {
+                    .php {
                         @include circle(#7174ad);
                         .circle-inner {
                             img {
                                 width: 50px;
-                                margin-top: 15px;
+                                margin-top: 25px;
                             }
                         }
-                        @keyframes rotate-circle6-right {
+                        @keyframes rotate-php-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -492,21 +566,21 @@ html {
                                 background: #7174ad;
                             }
                         }
-                        @keyframes rotate-circle6-left {
+                        @keyframes rotate-php-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
                             100% { transform: rotate(36deg); }
                         }
                     }
-                    .circle6_anim {
+                    .php_anim {
                         &::before {
-                            animation: rotate-circle6-left 1.5s linear 1s forwards;
+                            animation: rotate-php-left 1.5s linear 1s forwards;
                         }
                         &::after {
-                            animation: rotate-circle6-right 1.5s linear 1s forwards;
+                            animation: rotate-php-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle7 {
+                    .swift {
                         @include circle(#e45e32);
                         .circle-inner {
                             img {
@@ -514,7 +588,7 @@ html {
                                 margin-top: 20px;
                             }
                         }
-                        @keyframes rotate-circle7-right {
+                        @keyframes rotate-swift-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -525,12 +599,52 @@ html {
                             }
                         }
                     }
-                    .circle7_anim {
+                    .swift_anim {
                         &::after {
-                            animation: rotate-circle7-right 1.5s linear 1s forwards;
+                            animation: rotate-swift-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle8 {
+                    .sql {
+                        @include circle(#006489);
+                        .circle-inner {
+                            img {
+                                width: 30px;
+                                margin-top: 20px;
+                            }
+                        }
+                        @keyframes rotate-sql-right {
+                            0%   {
+                                transform: rotate(0deg);
+                                background: #eee;
+                            }
+                            50%  {
+                                transform: rotate(180deg);
+                                background: #eee;
+                            }
+                            50.01% {
+                                transform: rotate(360deg);
+                                background: #006489;
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                                background: #006489;
+                            }
+                        }
+                        @keyframes rotate-sql-left {
+                            0%   { transform: rotate(0deg); }
+                            50%  { transform: rotate(0deg); }
+                            100% { transform: rotate(72deg); }
+                        }
+                    }
+                    .sql_anim {
+                        &::before {
+                            animation: rotate-sql-left 1.5s linear 1s forwards;
+                        }
+                        &::after {
+                            animation: rotate-sql-right 1.5s linear 1s forwards;
+                        }
+                    }
+                    .ai {
                         @include circle(#ee7300);
                         .circle-inner {
                             img {
@@ -538,7 +652,7 @@ html {
                                 margin-top: 20px;
                             }
                         }
-                        @keyframes rotate-circle8-right {
+                        @keyframes rotate-ai-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -556,21 +670,21 @@ html {
                                 background: #ee7300;
                             }
                         }
-                        @keyframes rotate-circle8-left {
+                        @keyframes rotate-ai-left {
                             0%   { transform: rotate(0deg); }
                             50%  { transform: rotate(0deg); }
                             100% { transform: rotate(72deg); }
                         }
                     }
-                    .circle8_anim {
+                    .ai_anim {
                         &::before {
-                            animation: rotate-circle8-left 1.5s linear 1s forwards;
+                            animation: rotate-ai-left 1.5s linear 1s forwards;
                         }
                         &::after {
-                            animation: rotate-circle8-right 1.5s linear 1s forwards;
+                            animation: rotate-ai-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle9 {
+                    .ps {
                         @include circle(#00b8dd);
                         .circle-inner {
                             img {
@@ -578,7 +692,7 @@ html {
                                 margin-top: 20px;
                             }
                         }
-                        @keyframes rotate-circle9-right {
+                        @keyframes rotate-ps-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -589,12 +703,12 @@ html {
                             }
                         }
                     }
-                    .circle9_anim {
+                    .ps_anim {
                         &::after {
-                            animation: rotate-circle9-right 1.5s linear 1s forwards;
+                            animation: rotate-ps-right 1.5s linear 1s forwards;
                         }
                     }
-                    .circle10 {
+                    .xd {
                         @include circle(#d73f90);
                         .circle-inner {
                             img {
@@ -602,7 +716,7 @@ html {
                                 margin-top: 20px;
                             }
                         }
-                        @keyframes rotate-circle9-right {
+                        @keyframes rotate-xd-right {
                             0%   {
                                 transform: rotate(0deg);
                                 background: #eee;
@@ -613,51 +727,157 @@ html {
                             }
                         }
                     }
-                    .circle10_anim {
+                    .xd_anim {
                         &::after {
-                            animation: rotate-circle9-right 1.5s linear 1s forwards;
+                            animation: rotate-xd-right 1.5s linear 1s forwards;
                         }
                     }
                 }
                 .invisible {
+                    height: 0;
                     opacity: 0;
+                    padding: 0;
+                    margin: 0;
                 }
             }
             .about {
                 width: 100%;
-                img {
-                    display: block;
-                    width: 20%;
-                    height: 20%;
-                    margin: 30px auto;
-                    border-radius: 50%;
-                    &:hover {
-                        animation: photo 0.1s linear forwards;
-                        @keyframes photo {
-                            0% {
-                                transform: scale(1);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @media screen and (max-width: 1000px) {
+                    display: inline-block;
+                    .right {
+                        width: 80%;
+                        margin: 50px auto 0;
+                        p {
+                            text-align: center;
+                        }
+                    }
+                }
+                .left {
+                    // width: 50%;
+                    img {
+                        display: block;
+                        width: 40%;
+                        height: auto;
+                        margin: 30px auto;
+                        border-radius: 50%;
+                        box-shadow: 0 0px 5px rgba(0,0,0,0.5); 
+                        // animation: me 3s;
+                        // @keyframes me {
+                        //     0% {
+                        //         transform: translateX(-1000px) rotate(0deg);
+                        //     }
+                        //     100% {
+                        //         transform: translateX(0) rotate(1080deg);
+                        //     }
+                        // }
+                        &:hover {
+                            animation: photo 0.1s linear forwards;
+                            @keyframes photo {
+                                0% {
+                                    transform: scale(1);
+                                }
+                                100% {
+                                    transform: scale(1.1) rotate(15deg);
+                                }
                             }
-                            100% {
-                                transform: scale(1.1) rotate(15deg);
+                        }
+                    }
+                    p {
+                        font-weight: bold;
+                        text-align: center;
+                        margin: 10px;
+                        &.name {
+                            font-size: 24px;
+                        }
+                        &.info {
+                            font-size: 16px;
+                            color: #a0a0a0;
+                        }
+                    }
+                }
+                .right {
+                    // width: 50%;
+                    p {
+                        font-size: 16px;
+                        font-weight: bold;
+                        span {
+                            background: linear-gradient(transparent 60%, #ffff66 60%);
+                        }
+                    }
+                    ul {
+                        padding-left: 1em;
+                        li {
+                            list-style: none;
+                            color: #808080;
+                            margin: 0.5em 0;
+                            .when {
+                                background-color: #606060;
+                                color: white;
+                                padding: 0 0.2em;
+                                margin: 0 0.5em;
+                                border-radius: 0.2em;
+                                .already {
+                                    color: #666;
+                                }
+                            }
+                            .skill {
+                                border-bottom: 1px dashed #00a381;
+                            }
+                            a {
+                                color: #808080;
+                                &:visited {
+                                    color: #808080;
+                                }
                             }
                         }
                     }
                 }
+            }
+        }
+        footer {
+            width: 100%;
+            margin: 100px 0 0;
+            img {
+                display: block;
+                width: 15%;
+                margin: 0 10% 0 auto;
+                text-align: right;
+                // vertical-align: bottom;
+            }
+            .footer {
+                width: 100%;
+                background-color: #333;
+                padding: 20px 0 10px;
+                box-sizing: border-box;
                 p {
-                    font-weight: bold;
+                    margin: 0;
                     text-align: center;
-                    margin: 10px;
-                    &.name {
-                        font-size: 24px;
+                    color: white;
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        border-bottom: 1px dashed white;
+                        &:visited {
+                            color: white;
+                        }
                     }
-                    &.info {
-                        font-size: 16px;
-                        color: #a0a0a0;
+                }
+                .github {
+                    display: block;
+                    width: 2em;
+                    margin: 20px auto;
+                    img {
+                        width: 100%;
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
         }
-        
     }
 }
 

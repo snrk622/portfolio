@@ -2,161 +2,219 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="" />
         <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
-        <title></title>
+        <title>PORTFOLIO</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <header>
-            <h1>My Portfolio</h1>
-            <a href="#" class="sns_icon"><img src="img/github.svg"></a>
-        </header>
-        <div class="wrapper" id="wrapper">
-            <h2 class="title"><span class="initial">A</span>bout</h2>
-            <section class="about">
-                <img src="img/me.jpg">
-                <p class="name">Riki Shinohara</p>
-                <p class="info">University Student</p>
-            </section>
-            <h2><span class="initial">S</span>kills</h2>
-            <h3>Programing</h3>
-            <!-- <p>{{ targetRect }}</p> -->
-            <section class="skills" id="programing_skills">
-                <div class="skill">
-                    <div class="circle1" :class="{circle1_anim: animation}">
-                        <div class="circle-inner"><img src="img/html5.png"></div>
-                    </div>
-                    <p>90%</p>
-                    <div class="skill_name">
-                        HTML5
-                    </div>
+        <div id="wrapper">
+            <div class="top" id="pagetop">
+                <img src="img/top.png">
+                <div class="scroll-color" :style="{height: background}">
+
                 </div>
-                <div class="skill">
-                    <div class="circle2" :class="{circle2_anim: animation}">
-                        <div class="circle-inner"><img src="img/css3.png"></div>
+            </div>
+            <header>
+                <h1 id="h1">PORTFOLIO</h1>
+            </header>
+            <div class="wrapper">
+                <h2 class="title"><span class="initial">A</span>bout</h2>
+                <section class="about">
+                    <div class="left">
+                        <img src="img/me.jpg">
+                        <p class="name">Riki Shinohara</p>
+                        <p class="info">University Student</p>
                     </div>
-                    <p>80%</p>
-                    <div class="skill_name">
-                        CSS3
+                    <div class="right">
+                        <p><span>フロントエンドエンジニア</span>を目指して勉強中</p>
+                        <ul>
+                            <li>┣<span class="when">2017.05</span><span class="skill">HTML</span>と<span
+                                    class="skill">CSS</span>を独学で習得</li>
+                            <li>┣<span class="when"><span class="already">2017</span>.08</span><span
+                                    class="skill">JavaScript</span>を独学で習得</li>
+                            <li>┣<span class="when"><span class="already">2017</span>.09</span>模擬サイトを複数作成</li>
+                            <li>┣<span class="when">2018.01</span>本などでデザインの勉強</li>
+                            <li>┣<span class="when"><span class="already">2018</span>.04</span><span
+                                    class="skill">Illustrator</span>と<span class="skill">Photoshop</span>の練習</li>
+                            <li>┣<span class="when"><span class="already">2018</span>.06</span><span
+                                    class="skill">Swift</span>を独学で習得</li>
+                            <li>┣<span class="when"><span class="already">2018</span>.09</span>iOSアプリを複数開発</li>
+                            <li>┣<span class="when"><span class="already">2018</span>.10</span>授業で<span
+                                    class="skill">MySQL</span>を習得</li>
+                            <li>┣<span class="when"><span class="already">2018</span>.11</span>イベントのロゴをデザイン</li>
+                            <li>┣<span class="when">2019.01</span><span class="skill">Ruby</span>を独学で習得</li>
+                            <li>┣<span class="when"><span class="already">2019</span>.02</span><span class="skill">PHP</span>を独学で習得
+                            </li>
+                            <li>┣<span class="when"><span class="already">2019</span>.03</span>PHPとMySQLを使いウェブアプリケーションを開発</li>
+                            <li>┣<span class="when"><span class="already">2019</span>.04</span><span
+                                    class="skill">Vue.js</span>を独学で習得</li>
+                            <li>┗<span class="when"><span class="already">2019</span>.05</span>Vue.jsを使った<a href="">Brightness
+                                    Changer</a>を公開</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="skill">
-                    <div class="circle3" :class="{circle3_anim: animation}">
-                        <div class="circle-inner"><img src="img/js.png"></div>
-                    </div>
-                    <p>70%</p>
-                    <div class="skill_name">
-                        JavaScript
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="circle4" :class="{circle4_anim: animation}">
-                        <div class="circle-inner"><img src="img/vue.png"></div>
-                    </div>
-                    <p>60%</p>
-                    <div class="skill_name">
-                        Vue.js
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="circle5" :class="{circle5_anim: animation}">
-                        <div class="circle-inner"><img src="img/ruby.png"></div>
-                    </div>
-                    <p>50%</p>
-                    <div class="skill_name">
-                        Ruby
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="circle6" :class="{circle6_anim: animation}">
-                        <div class="circle-inner"><img src="img/php.png"></div>
-                    </div>
-                    <p>60%</p>
-                    <div class="skill_name">
-                        PHP
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="circle7" :class="{circle7_anim: animation}">
-                        <div class="circle-inner"><img src="img/swift.png"></div>
-                    </div>
-                    <p>40%</p>
-                    <div class="skill_name">
-                        Swift
-                    </div>
-                </div>
-                <div class="skill invisible"></div>
-            </section>
-            <h3>Software</h3>
-            <section class="skills" id="software_skills">
-                <div class="skill">
-                    <div class="circle8" :class="{circle8_anim: animation}">
-                        <div class="circle-inner"><img src="img/ai.png"></div>
-                    </div>
-                    <p>70%</p>
-                    <div class="skill_name">
-                        Illustrator
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="circle9" :class="{circle9_anim: animation}">
-                        <div class="circle-inner"><img src="img/ps.png"></div>
-                    </div>
-                    <p>30%</p>
-                    <div class="skill_name">
-                        Photoshop
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="circle10" :class="{circle10_anim: animation}">
-                        <div class="circle-inner"><img src="img/xd.png"></div>
-                    </div>
-                    <p>30%</p>
-                    <div class="skill_name">
-                        XD
-                    </div>
-                </div>
-                <div class="skill invisible">
-                    
-                </div>
-            </section>
-            <h2><span class="initial">W</span>orks</h2>
-            <p class="desc">公開した作品のデモをご覧いただけます.</p>
-            <section class="window">
-                <div class="tabs">
-                    <div class="circles">
-                        <div class="circle circle_red"></div>
-                        <div class="circle circle_yellow"></div>
-                        <div class="circle circle_green"></div>
-                    </div>
-                    <div class="tab" :class="{tab_now: activeTab === 1}" @click="clickTabA">
-                        <img src="img/favicon.png">
-                        <div class="tab_main">
-                            <span>Brightness Changer</span>
+                </section>
+                <h2><span class="initial">S</span>kills</h2>
+                <p class="desc">『調べずに適切な処理を記述できるか』という指標で自己評価しました.</p>
+                <h3><span>Programing</span></h3>
+                <section class="skills" id="programing_skills">
+                    <div class="skill">
+                        <div class="html" :class="{html_anim: animation}">
+                            <div class="circle-inner"><img src="img/html5.png"></div>
+                        </div>
+                        <p>90%</p>
+                        <div class="skill_name">
+                            HTML5
                         </div>
                     </div>
-                    <div class="tab" :class="{tab_now: activeTab === 2}" @click="clickTabB">
-                        <div class="tab_main">
-                            <span>Moji Counter</span>
+                    <div class="skill">
+                        <div class="css" :class="{css_anim: animation}">
+                            <div class="circle-inner"><img src="img/css3.png"></div>
+                        </div>
+                        <p>80%</p>
+                        <div class="skill_name">
+                            CSS3
                         </div>
                     </div>
+                    <div class="skill">
+                        <div class="js" :class="{js_anim: animation}">
+                            <div class="circle-inner"><img src="img/js.png"></div>
+                        </div>
+                        <p>70%</p>
+                        <div class="skill_name">
+                            JavaScript
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="vue" :class="{vue_anim: animation}">
+                            <div class="circle-inner"><img src="img/vue.png"></div>
+                        </div>
+                        <p>60%</p>
+                        <div class="skill_name">
+                            Vue.js
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="ruby" :class="{ruby_anim: animation}">
+                            <div class="circle-inner"><img src="img/ruby.png"></div>
+                        </div>
+                        <p>50%</p>
+                        <div class="skill_name">
+                            Ruby
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="php" :class="{php_anim: animation}">
+                            <div class="circle-inner"><img src="img/php.png"></div>
+                        </div>
+                        <p>60%</p>
+                        <div class="skill_name">
+                            PHP
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="swift" :class="{swift_anim: animation}">
+                            <div class="circle-inner"><img src="img/swift.png"></div>
+                        </div>
+                        <p>40%</p>
+                        <div class="skill_name">
+                            Swift
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="sql" :class="{sql_anim: animation}">
+                            <div class="circle-inner"><img src="img/sql.png"></div>
+                        </div>
+                        <p>70%</p>
+                        <div class="skill_name">
+                            MySQL
+                        </div>
+                    </div>
+                    <div class="skill invisible"></div>
+                </section>
+                <h3><span>Software</span></h3>
+                <section class="skills" id="software_skills">
+                    <div class="skill">
+                        <div class="ai" :class="{ai_anim: animation}">
+                            <div class="circle-inner"><img src="img/ai.png"></div>
+                        </div>
+                        <p>70%</p>
+                        <div class="skill_name">
+                            Illustrator
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="ps" :class="{ps_anim: animation}">
+                            <div class="circle-inner"><img src="img/ps.png"></div>
+                        </div>
+                        <p>30%</p>
+                        <div class="skill_name">
+                            Photoshop
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="xd" :class="{xd_anim: animation}">
+                            <div class="circle-inner"><img src="img/xd.png"></div>
+                        </div>
+                        <p>30%</p>
+                        <div class="skill_name">
+                            XD
+                        </div>
+                    </div>
+                    <div class="skill invisible">
             
-                </div>
-                <div class="search">
-                    <div class="search_button"><img src="img/left_allow.png"></div>
-                    <div class="search_button"><img src="img/right_allow.png"></div>
-                    <div class="search_button"><img class="rotate" src="img/reload.png"></div>
-                    <div class="search_bar">
-                        <a v-show="activeTab === 1" href="">https://brightness_changer.com</a>
-                        <a v-show="activeTab === 2" href="">https://moji_counter.com</a>
                     </div>
+                </section>
+                <h2><span class="initial">W</span>orks</h2>
+                <p class="desc">公開した作品の雰囲気をご覧いただけます.</p>
+                <section class="window">
+                    <div class="tabs">
+                        <div class="circles">
+                            <div class="circle circle_red"></div>
+                            <div class="circle circle_yellow"></div>
+                            <div class="circle circle_green"></div>
+                        </div>
+                        <div class="tab" :class="{tab_now: activeTab === 1}" @click="clickTabA">
+                            <img src="img/brightness_changer_favicon.png">
+                            <div class="tab_main">
+                                <span>Brightness Changer</span>
+                            </div>
+                        </div>
+                        <div class="tab" :class="{tab_now: activeTab === 2}" @click="clickTabB">
+                            <img src="img/moji_counter_favicon.png">
+                            <div class="tab_main">
+                                <span>moji counter</span>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="search">
+                        <div class="search_button"><img src="img/left_allow.png"></div>
+                        <div class="search_button"><img src="img/right_allow.png"></div>
+                        <div class="search_button"><img class="rotate" src="img/reload.png"></div>
+                        <div class="search_bar">
+                            <a v-show="activeTab === 1"
+                                href="https://brightness-changer.snrk.me/">https://brightness-changer.snrk.me/</a>
+                            <a v-show="activeTab === 2" href="https://moji-counter.snrk.me/">https://moji-counter.snrk.me/</a>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <img v-show="activeTab === 1" src="img/brightness_changer_demo.png">
+                        <img v-show="activeTab === 2" src="img/moji_counter_demo.png">
+                    </div>
+                </section>
+            </div>
+            <footer id="footer">
+                <img src="img/footer.png">
+                <div class="footer">
+                    <p>&copy; 2019 <a href="#">snrk.me</a></p>
+                    <a class="github" href="https://github.com/snrk622"><img src="img/github.svg"></a>
                 </div>
-                <div class="contents">
-                    <img v-show="activeTab === 1" src="img/brightness_changer_demo.png">
-                    <img v-show="activeTab === 2" src="img/moji_counter_demo.png">
-                </div>
-            </section>
+            </footer>
         </div>
+        
         
         
         
